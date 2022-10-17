@@ -5,15 +5,117 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #232a40;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-    background-color: black;
+  }
+
+/*.root
+/*{
+/*  margin-left: 160px;
+/*  padding: 0px 10px;
+/*}*/
+
+.sidebar
+{
+  height: 100%;
+  width: 100px;
+  top: 0;
+  left: 0;
+  background-color: #232a40;
+  overflow-x: hidden;
+  padding-top: 20px;
+  z-index: 1;
+  position: fixed;
 }
 
-.shopping-list
+.sidebar a
 {
-  
+  width: 70px;
+  height: 70px;
+  margin-left: 15px;
+}
+
+.sidebar a img
+{
+  width: 70px;
+  height: 70px;
+}
+
+.homepage
+{
+  margin-left: 100px;
+}
+
+.homepage .info
+{
+  margin-top: 2%;
+  margin-right: 2%;
+  border-radius: 25px;
+  border: 2px solid white;
+  color: white;
+  padding-left: 1%;
+}
+
+#icao
+{
+  margin-top: 5%;
+  text-align: center;
+  color: white;
+}
+
+#icao input
+{
+  border: 2px solid white;
+  border-radius: 25px;
+  width: 40%;
+  text-align: center;
+}
+
+#dep
+{
+  float: left;
+  margin-left: 10%;
+}
+
+#arr
+{
+  float: right;
+  margin-right: 10%;
+}
+
+.metar
+{
+  padding-top: 5%;
+}
+
+.metar p
+{
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 25px;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.metar p[name="dep"]
+{
+  float: left;
+  margin-left: 2.5%;
+}
+
+.metar p[name="arr"]
+{
+  float: right;
+  margin-right: 2.5%;
+}
+
+#rounded-border-div
+{
+  border: 2px solid white;
+  border-radius: 25px;
 }
