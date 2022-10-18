@@ -89,17 +89,18 @@ code {
 
 .metar
 {
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 .metar p
 {
   width: 30%;
   border: 2px solid white;
-  border-radius: 25px;
+  border-radius: 15px;
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  text-align: center;
 }
 
 .metar p[name="dep"]

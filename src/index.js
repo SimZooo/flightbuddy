@@ -1,10 +1,10 @@
-import { React, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Sidebar } from "./sidebar.js"
-import { fetchMetar } from './fetch-metar.js';
+import { Metar } from './web.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,50 +13,72 @@ root.render(
   </React.StrictMode>
 );
 
-const icaoChanged = event => 
+class Info extends React.Component
 {
-  departure_metar = fetchMetar(event.target.value)
-  ReactDOM.render(departure_metar, document.getElementById("dep_metar"))
+  render()
+  {
+    return(
+      <div className="info">
+          <p>Callsign:</p>
+        </div>
+    )
+  }
 }
-
-let departure_metar = "";
-
 class HomePage extends React.Component
 {
+  constructor()
+  {
+    super()
+    this.state =
+    {
+      departure_airport: "",
+      arrival_airport: "",
+    }
+
+    this.onAirportChange = this.onAirportChange.bind(this)
+  }
   render()
   {
     return (
       <div className="homepage">
         <Sidebar />
-        <div className="info">
-          <p>Callsign:</p>
-        </div>
+        <Info />
         <div id="icao">
           <div id="dep">
             <label>Departure</label> <br/>
-            <input onChange={icaoChanged}></input>
+            <input name="dep" onBlur={this.onAirportChange}></input>
           </div>
           <div id="arr">
             <label>Arrival</label> <br/>
-            <input onChange={icaoChanged}></input>
+            <input name="arr" onBlur={this.onAirportChange}></input>
           </div>
           <div className="metar">
-            <p id="dep_metar" name="dep">
-              
-            </p>
-            <p name="arr">
-              metar
-            </p>
+            <Metar icao={this.state.departure_airport} name="dep"/>
+            <Metar icao={this.state.arrival_airport} name="arr"/>
           </div>
         </div>
       </div>
     )
   }
-  
+
+  onAirportChange(evt)
+  {
+    if(evt.target.name === "dep")
+    {
+      this.setState(
+        {
+          departure_airport: evt.target.value
+        })
+    }
+    else{
+      this.setState(
+        {
+          arrival_airport: evt.target.value
+        })
+    }
+    this.forceUpdate();
+  }
 }
 root.render(<HomePage />)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
