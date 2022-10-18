@@ -32,7 +32,7 @@ class HomePage extends React.Component
     this.state =
     {
       departure_airport: "",
-      arrival_airport: "",
+      arrival_airport: ""
     }
 
     this.onAirportChange = this.onAirportChange.bind(this)

@@ -8,41 +8,10 @@ body {
   background-color: #232a40;
 }
 
-code {
+code 
+{
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  }
-
-/*.root
-/*{
-/*  margin-left: 160px;
-/*  padding: 0px 10px;
-/*}*/
-
-.sidebar
-{
-  height: 100%;
-  width: 100px;
-  top: 0;
-  left: 0;
-  background-color: #232a40;
-  overflow-x: hidden;
-  padding-top: 20px;
-  z-index: 1;
-  position: fixed;
-}
-
-.sidebar a
-{
-  width: 70px;
-  height: 70px;
-  margin-left: 15px;
-}
-
-.sidebar a img
-{
-  width: 70px;
-  height: 70px;
 }
 
 .homepage
@@ -73,6 +42,7 @@ code {
   border-radius: 25px;
   width: 40%;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #dep
@@ -119,4 +89,10 @@ code {
 {
   border: 2px solid white;
   border-radius: 25px;
+}
+
+a#settings
+{
+  bottom: 0;
+  position: relative;
 }

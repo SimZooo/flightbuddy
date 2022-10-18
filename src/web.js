@@ -20,7 +20,6 @@ export function Metar(props)
                 xhr.open("GET", `https://api.checkwx.com/metar/${props.icao.toUpperCase()}`)
                 xhr.setRequestHeader("X-API-KEY", "330dfffdb1a040679169a4f7b9")
                 xhr.send()
-                //setMetar(text.substring(text.lastIndexOf(props.icao), metar.length))
             }
     });
 
